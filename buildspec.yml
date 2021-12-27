@@ -10,7 +10,7 @@ phases:
   build:
     commands:
       - '& nuget restore'
-      - '& mubuild -p:FrameworkPathOverride="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v$env:DOTNET_FRAMEWORK" /p:PackageAsSingleFile=false /p:Configuration=Release $env:SOLUTION'
+      - '& mubuild /p:TargetFrameworkVersion=v$env:DOTNET_FRAMEWORK /p:PackageAsSingleFile=false /p:Configuration=Release $env:SOLUTION'
 artifacts:
   files:
     - bin\Debug\*
